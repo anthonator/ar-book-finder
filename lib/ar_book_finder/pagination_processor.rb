@@ -4,9 +4,18 @@ module ARBookFinder
 
     DEFAULT_SORT_BY = 'Relevance'
 
+    SORT_BY_TYPES = {
+      title: 'Title',
+      author: 'Author',
+      interest_level: 'Interest Level',
+      book_level: 'Book Level',
+      relevance: 'Relevance',
+      rating: 'Rating'
+    }
+
     def initialize(page, sort_by)
       @page = page
-      @sort_by = sort_by
+      @sort_by = SORT_BY_TYPES[sort_by]
     end
 
     def process

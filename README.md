@@ -1,6 +1,8 @@
 # ARBookFinder
 
-Retrieve book data from [arbookfinder.com](http://www.arbookfinder.com)
+Retrieve book data from [arbookfind.com](http://www.arbookfind.com)
+
+[![Build Status](https://travis-ci.org/anthonator/ar-book-finder.png?branch=master)](https://travis-ci.org/anthonator/ar-book-finder) [![Coverage Status](https://coveralls.io/repos/anthonator/ar-book-finder/badge.png)](https://coveralls.io/r/anthonator/ar-book-finder)
 
 ## Installation
 

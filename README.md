@@ -2,7 +2,7 @@
 
 Retrieve book data from [arbookfind.com](http://www.arbookfind.com)
 
-[![Build Status](https://travis-ci.org/anthonator/ar-book-finder.png?branch=master)](https://travis-ci.org/anthonator/ar-book-finder) [![Coverage Status](https://coveralls.io/repos/anthonator/ar-book-finder/badge.png)](https://coveralls.io/r/anthonator/ar-book-finder) [![Code Climate](https://codeclimate.com/github/anthonator/ar-book-finder.png)](https://codeclimate.com/github/anthonator/ar-book-finder)
+[![Build Status](https://travis-ci.org/anthonator/ar-book-finder.png?branch=master)](https://travis-ci.org/anthonator/ar-book-finder) [![Dependency Status](https://gemnasium.com/anthonator/ar-book-finder.png)](https://gemnasium.com/anthonator/ar-book-finder) [![Coverage Status](https://coveralls.io/repos/anthonator/ar-book-finder/badge.png)](https://coveralls.io/r/anthonator/ar-book-finder) [![Code Climate](https://codeclimate.com/github/anthonator/ar-book-finder.png)](https://codeclimate.com/github/anthonator/ar-book-finder)
 
 ## Installation
 

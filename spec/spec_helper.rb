@@ -6,3 +6,12 @@ require 'simplecov'
 require 'coveralls'
 SimpleCov.start
 
+require 'ar_book_finder'
+
+RSpec.configure do |config|
+  config.before(:each) do
+    ARBookFinder.configure do |config|
+      config.user_type = :teacher
+    end
+  end
+end

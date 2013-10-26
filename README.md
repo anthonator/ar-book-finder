@@ -18,6 +18,9 @@ Or install it yourself as:
 
     $ gem install ar_book_finder
 
+### PhantomJS
+This gem utilizes [PhantomJS](http://phantomjs.org/) for interacting with [arbookfind.com](http://www.arbookfind.com). Make sure to [install PhantomJS](http://phantomjs.org/download.html) in order to use this gem.
+
 ## Configuration
 Choose what type of user to peform searches as.
 

@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = ARBookFinder::VERSION
   spec.authors       = ["Anthony Smith"]
   spec.email         = ["anthony@sticksnleaves.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Access book data on ARBookFinder}
+  spec.summary       = %q{Crawls and parses data on arbookfind.com and returns book data in an easy to use format}
   spec.homepage      = "https://github.com/anthonator/ar-book-finder"
   spec.license       = "MIT"
 

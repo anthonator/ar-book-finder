@@ -79,7 +79,7 @@ results.books # Retrieve the books returned on this page
 Load book data on demand using ```#fetch```...
 ``` ruby
 ...
-book = results[0]
+book = results.book[0]
 book.fetch # Retrieve book data
 book.title
 book.author

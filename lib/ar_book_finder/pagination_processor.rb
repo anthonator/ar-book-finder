@@ -1,27 +1,21 @@
 module ARBookFinder
   class PaginationProcessor
     include Capybara::DSL
+    
+    SEARCH_GOTO_FIELD = 'ctl00_ContentPlaceHolder1_ucSeachResults_txtPageToGoToTop'
+    SEARCH_SUBMIT_BUTTON = 'ctl00_ContentPlaceHolder1_ucSeachResults_btnGoToPageTop'
+    
+    COLLECTION_GOTO_FIELD = 'ctl00_ContentPlaceHolder1_ucCollection_ucSeachResults_txtPageToGoToTop'
+    COLLECTION_SUBMIT_BUTTON = 'ctl00_ContentPlaceHolder1_ucCollection_ucSeachResults_btnGoToPageTop'
 
-    DEFAULT_SORT_BY = 'Relevance'
-
-    SORT_BY_TYPES = {
-      title: 'Title',
-      author: 'Author',
-      interest_level: 'Interest Level',
-      book_level: 'Book Level',
-      relevance: 'Relevance',
-      rating: 'Rating'
-    }
-
-    def initialize(page, sort_by)
+    def initialize(page, collection = false)
       @page = page
-      @sort_by = SORT_BY_TYPES[sort_by]
+      @field_const = collection ? :COLLECTION : :SEARCH
     end
 
     def process
-      fill_in('ctl00_ContentPlaceHolder1_ucSeachResults_txtPageToGoToTop', with: @page)
-      select(@sort_by, from: 'ctl00_ContentPlaceHolder1_ucSeachResults_lstSortOptionListTop')
-      click_button('ctl00_ContentPlaceHolder1_ucSeachResults_btnGoToPageTop')
+      fill_in(self.class.const_get(:"#{@field_const}_GOTO_FIELD"), with: @page)
+      click_button(self.class.const_get(:"#{@field_const}_SUBMIT_BUTTON"))
     end
   end
 end

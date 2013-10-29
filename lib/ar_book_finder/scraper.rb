@@ -4,14 +4,28 @@ module ARBookFinder
       UserTypeProcessor.new(user_type).process
     end
 
-    def search(query, page = 1, sort_by = 'Relevance')
-      QuickSearchProcessor.new(query, page, sort_by).process
-      SearchResultsParser.new(Capybara.page.html).parse
+    def search(query, page = 1)
+      QuickSearchProcessor.new(query).process
+      results = SearchResultsParser.new(Capybara.page.html).parse
+      if page > 1
+        results = paginate(page, false)
+      end
+      results
     end
     
-    def collection(collection)
+    def collection(collection, page = 1)
       CollectionProcessor.new(collection).process
-      SearchResultsParser.new(Capybara.page.html, true).parse
+      results = SearchResultsParser.new(Capybara.page.html, true).parse
+      if page > 1
+        results = paginate(page, true)
+      end
+      results
+    end
+    
+    private
+    def paginate(page, collection) 
+      PaginationProcessor.new(page, collection).process
+      SearchResultsParser.new(Capybara.page.html, collection).parse
     end
   end
 end

@@ -26,15 +26,15 @@ module ARBookFinder
     Scraper.new(user_type)
   end
 
-  def self.search(query, page = 1, sort_by = :relevance)
-    scraper(options[:user_type]).search(query, page, sort_by)
+  def self.search(query, page = 1)
+    scraper(options[:user_type]).search(query, page)
   end
 
   def self.advanced_search(user_type, search_type, params)
     raise 'Not yet implemented'
   end
 
-  def self.collection(collection)
-    scraper(options[:user_type]).collection(collection)
+  def self.collection(collection, page = 1)
+    scraper(options[:user_type]).collection(collection, page)
   end
 end

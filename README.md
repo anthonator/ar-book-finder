@@ -110,8 +110,9 @@ results = ARBookFinder.collection({ 'State Lists' => { 'Indiana' => 'IN Young Ho
 ### Pagination
 It's also possible to paginate search results.
 ```ruby
-# Retrieve results for page 2 and sort on title
+# Retrieve results for page 2
 results = ARBookFinder.search('harry potter', 2)
+results.current_page # should == 2
 ```
 
 ## Contributing

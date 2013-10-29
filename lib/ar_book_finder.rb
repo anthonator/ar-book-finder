@@ -2,11 +2,11 @@ require 'capybara'
 require 'capybara/poltergeist'
 require 'nokogiri'
 
-ARBookFinder::BASE_URL = 'http://www.arbookfind.com'
-
+require 'ar_book_finder/constants'
 require 'ar_book_finder/user_type_processor'
 require 'ar_book_finder/pagination_processor'
 require 'ar_book_finder/quick_search_processor'
+require 'ar_book_finder/collection_processor'
 require 'ar_book_finder/book_detail_processor'
 require 'ar_book_finder/search_results_parser'
 require 'ar_book_finder/book_detail_parser'
@@ -34,7 +34,7 @@ module ARBookFinder
     raise 'Not yet implemented'
   end
 
-  def self.collection(topic, sub_topic)
-    raise 'Not yet implemented'
+  def self.collection(collection)
+    scraper(options[:user_type]).collection(collection)
   end
 end

@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module ARBookFinder
   class Book
     attr_reader :cover, :title, :author, :summary,
@@ -33,7 +35,7 @@ module ARBookFinder
     end
 
     def load_ar_quiz_availability(ar_quiz_availability)
-      @ar_quiz_availability = ar_quiz_availability.split(',').collect { |v| v.strip }
+      @ar_quiz_availability = ar_quiz_availability.split(',').collect { |v| v.strip.gsub('  ', '') }
     end
 
     def load_topics(topics)

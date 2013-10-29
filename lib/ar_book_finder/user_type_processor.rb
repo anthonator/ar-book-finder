@@ -1,6 +1,8 @@
 module ARBookFinder
   class UserTypeProcessor
     include Capybara::DSL
+    
+    USER_TYPE_URL = "#{ARBookFinder::BASE_URL}/usertype.aspx"
 
     USER_TYPES = {
       student: 'Student',
@@ -14,7 +16,7 @@ module ARBookFinder
     end
 
     def process
-      visit('http://www.arbookfind.com/usertype.aspx')
+      visit(USER_TYPE_URL)
       choose(@user_type)
       click_button('Submit')
     end

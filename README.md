@@ -94,11 +94,11 @@ publisher.isbn
 ...
 ```
 
-### Pagination and Sorting
-It's also possible to paginate and sort search results.
+### Pagination
+It's also possible to paginate search results.
 ```ruby
 # Retrieve results for page 2 and sort on title
-results = ARBookFinder.Search('harry potter', 2, :title)
+results = ARBookFinder.search('harry potter', 2)
 ```
 
 ## Contributing

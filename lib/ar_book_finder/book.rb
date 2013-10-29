@@ -29,8 +29,7 @@ module ARBookFinder
       load_ar_quiz_availability(parsed_data[:ar_quiz_availability])
       load_topics(parsed_data[:topics])
       load_series(parsed_data[:series])
-
-      parsed_data[:publishers].each { |p| @publishers << Publisher.new(p) }
+      load_publishers(parsed_data[:publishers])
     end
 
     def load_ar_quiz_availability(ar_quiz_availability)
@@ -45,6 +44,10 @@ module ARBookFinder
 
     def load_series(series)
       @series = series.split(';').collect { |v| v.strip }
+    end
+    
+    def load_publishers(publishers)
+      publishers.each { |p| @publishers << Publisher.new(p) }
     end
   end
 end

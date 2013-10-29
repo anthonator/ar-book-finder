@@ -2,6 +2,8 @@ require 'capybara'
 require 'capybara/poltergeist'
 require 'nokogiri'
 
+ARBookFinder::BASE_URL = 'http://www.arbookfind.com'
+
 require 'ar_book_finder/user_type_processor'
 require 'ar_book_finder/pagination_processor'
 require 'ar_book_finder/quick_search_processor'
@@ -24,7 +26,7 @@ module ARBookFinder
     Scraper.new(user_type)
   end
 
-  def self.search(query, page = 1, sort_by = 'Relevance')
+  def self.search(query, page = 1, sort_by = :relevance)
     scraper(options[:user_type]).search(query, page, sort_by)
   end
 

@@ -16,6 +16,11 @@ describe 'Collection' do
     results.current_page.should == 2
   end
   
+  it 'should return total book count' do
+    results = ARBookFinder.collection({ 'Awards' => 'ALA Notable/Best Books' })
+    results.total_books.should > 0
+  end
+  
   it 'should fetch book data' do
     results = ARBookFinder.collection('Awards' => 'ALA Notable/Best Books')
     book = results.books[0]

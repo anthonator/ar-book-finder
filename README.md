@@ -68,7 +68,7 @@ And publisher details:
 ## Usage
 
 ### Quick Search
-Quick search allows you to perform searches based on title, topics, author or ISBN.
+Quick search will allow you to perform searches based on title, topics, author or ISBN.
 
 Perform a quick search...
 ```ruby
@@ -92,6 +92,19 @@ publisher = book.publishers
 publisher.name
 publisher.isbn
 ...
+```
+
+### Collections
+Collections will retrieve books lists. Examples include awards, state lists, etc.
+
+Retrieve a collection...
+```ruby
+results = ARBookFinder.collection({ 'Awards' => 'ALA Notable/Best Books' })
+```
+
+Retrieve a collection with a multi-level hash...
+```ruby
+results = ARBookFinder.collection({ 'State Lists' => { 'Indiana' => 'IN Young Hoosier Middle Grades Book Award Nominees 2013-2014' } })
 ```
 
 ### Pagination
